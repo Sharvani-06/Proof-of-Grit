@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Proof Of Grit
+        </title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>
+                Proof of Grit
+            </h1>
+            <p>
+                Measure effort, not privilege.
+            </p>
+            <form method="POST">
+                <input type= "number" name="active_days" placeholder="Days Active on Project" required>
+                <input type= "number" name="total_days" placeholder="Total project Duration" required>
+                <button type = "submit" > Calculate Grit</button>
+            </form>
+            {% if percentage %}
+            <div class = "result">
+                <h2> Grit Score:
+                    {{percentage}} %
+                </h2>
+                <h3>
+                    {{level}}
+                </h3>
+                <p>
+                    {{badge}}
+                </p>
+            </div>
+            {% endif %}
+            <form action="/github" method="POST">
+                <input type="text" name="username" placeholder="Enter GitHub Username" required>
+                <button type="submit">Check GitHub Grit</button>
+            </form>
+
+
+        </div>
+    </body>
+</html>
